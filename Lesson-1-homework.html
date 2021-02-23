@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson-1-homework</title>
+    <script src="Lesson-1-homework.js"></script>
+</head>
+
+<body>
+    <main>
+        <h2> Задание 1 </h2>
+        <p>Вы указали <script>
+                document.write(celsTemp);
+            </script> &deg; Цельсия, это <script>
+                document.write(farTemp);
+            </script> &deg; по Фаренгейту.
+        </p>
+
+        <h2>Задание 2</h2>
+        <p>Вы указали имя <script>
+                document.write(name);
+            </script> и теперь вашего администратора зовут так же - <script>
+                document.write(admin);
+            </script>
+        </p>
+
+        <h2>Задание 3</h2>
+        <p>JS-выражение 1000 + "108" будет равно 1000108, потому что вторая часть этого выражение - строка, а не число, а значит конкатинация будет слеплять результат, а не суммировать. Проверим: <br>
+            1000 + "108" = <script>
+                var testSum = 1000 + "108";
+                document.write(testSum);
+            </script>
+        </p>
+
+        <h2>Задание 4</h2>
+        <p>Самостоятельно разобраться с атрибутами тега script (async и defer). <br> Оба атрибута позволяют грузить скрипты не блокируя остальную загрузку страницы, разница будет в моменте выполения скрипта. Запуск скрипта defer происходит последовательно согласно структуре документа, запуск async зависит только от момента загрузки скрипта и не регулируется, кто раньше догрузился - того и тапки. </p>
+
+        <h2>Задание 5</h2>
+        <p>
+            У нас есть переменная а = <script>
+                var a = +prompt('Введите число для переменной а');
+                document.write(a)
+            </script> и переменная b = <script>
+                var b = +prompt('Введите число для переменной b');
+                document.write(b)
+            </script>. <br>
+            Вуаля, и теперь все наоборот.
+            <script>
+                a = a + b;
+                b = a - b;
+                a = a - b;
+                document.write('Теперь a = ' + a + ', b = ' + b);
+            </script>.
+        </p>
+
+    </main>
+
+
+</body>
+
+</html>
