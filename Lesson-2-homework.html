@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 2</title>
+</head>
+
+<body>
+    <H3>Задание 1</H3>
+    <p>
+        <b> var a = 1, b = 1, c, d; <br>
+            Шаг 1: c = ++a; alert(c); // 2</b> = Переменная c не была задана, форма инкримента префиксная, значит мы сначала добавили а+1, а потом результат присвоили переменной с <br>
+        <b>Шаг 2: d = b++; alert(d); // 1</b> Постфиксная форма инкримента - сначала мы присвоили d значение b =1, а потом увеличили b на 1. <br>
+        <b>Шаг 3: c = (2+ ++a); alert(c); // 5 </b>а уже было равно 2 после первого шага, снова сначала увеличиваем его на единицу, а потом производим остальные вычисления = 2+(2+1) = 2+3 = 5<br>
+        <b>Шаг 4: d = (2+ b++); alert(d); // 4</b> На втором шаге в конце b=2, снова постфиксная запись, то есть сначала присвоим значение d, а потом увеличим B = 2+(2) = 4 <br>
+        <b>alert(a); // 3</b> - После шага 3 = 3 <br>
+        <b>alert(b); // 3</b> В конце шага 4 после присвоения d, переменная b равна 2+1=3<br>
+    </p>
+
+    <h3>Задание 2</h3>
+    <p>
+        Вычислить x <br>
+        var a = 2; <br>
+        var x = 1 + (a *= 2); <br>
+        <script>
+            var a = 2;
+            var x = 1 + (a *= 2);
+            document.write("<h5>Х = " + x + "</h5>");
+        </script>
+    </p>
+
+    <h3>Задание 3</h3>
+    <p>Объявить две целочисленные переменные a и b и задать им произвольные начальные значения <br>
+        если a и b положительные, вывести их разность;<br>
+        если а и b отрицательные, вывести их произведение;<br>
+        если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.<br>
+
+        <script>
+            function getNumber(min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+            }
+            var a = getNumber(-100, 100);
+            document.write('Переменная а = ' + a + "<br>");
+            var b = getNumber(-100, 100);
+            document.write('Переменная b = ' + b + "<br>");
+
+
+            if (a >= 0 && b >= 0) {
+                document.write("Оба числа положительные, их разность = " + (a - b));
+            } else if (a < 0 && b < 0) {
+                document.write("Оба числа отрицательные, их произведение = " + a * b);
+            } else if ((a >= 0 && b < 0) || (a < 0 && B >= 0)) {
+                document.write("У чисел разный знак, их сумма = " + (a + b));
+            }
+        </script>
+    </p>
+
+    <h3>Задание 4</h3>
+    <p>Присвоить переменной а значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15. <br>
+        <script>
+            var a4 = getNumber(0, 15);
+            document.write("Пусть переменная а = " + a4 + "<br> Выведем оставшиеся значения от a до 15: ");
+
+            function getRow(z) {
+                if (z < 15) {
+                    document.write(z++);
+                    document.write(", ");
+                    getRow(z);
+                } else if (z = 15) {
+                    document.write("15, Конец!");
+                }
+            }
+
+            switch (a4) {
+                case 0:
+                    getRow(0);
+                    break;
+                case 1:
+                    getRow(1);
+                    break;
+                case 2:
+                    getRow(2);
+                    break;
+                case 3:
+                    document.write("3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, Конец!"); //ну или можно так, но зачем
+                    break;
+                case 4:
+                    getRow(4);
+                    break;
+                case 5:
+                    getRow(5);
+                    break;
+                case 6:
+                    getRow(6);
+                    break;
+                case 7:
+                    getRow(7);
+                    break;
+                case 8:
+                    getRow(8);
+                    break;
+                case 9:
+                    getRow(9);
+                    break;
+                case 10:
+                    getRow(10);
+                    break;
+                case 11:
+                    getRow(11);
+                    break;
+                case 12:
+                    getRow(12);
+                    break;
+                case 13:
+                    getRow(13);
+                    break;
+                case 14:
+                    getRow(14);
+                    break;
+                case 15:
+                    document.write("15, Конец!");
+                    break;
+            }
+        </script>
+
+        <br> Я надеюсь, это была отработка миллиона кейсов, потому что конечно проще и короче так: <br>
+        <script>
+            getRow(a4);
+        </script>
+
+
+    </p>
+
+    <h3>Задание 5</h3>
+    <p> Реализовать основные 4 арифметические операции в виде функций с двумя параметрами. Обязательно использовать оператор return.
+        <script>
+            var arg1, arg2;
+
+            function sum(arg1, arg2) {
+                return arg1 + arg2;
+            }
+
+            function razn(arg1, arg2) {
+                return arg1 - arg2;
+            }
+
+            function mult(arg1, arg2) {
+                return arg1 * arg2;
+            }
+
+            function div(arg1, arg2) {
+                return arg1 / arg2;
+            }
+        </script>
+        <br>Готово, функции внутри.
+    </p>
+
+    <h3>Задание 6</h3>
+    <script>
+            arg1 = +prompt('Введите первый аргумент для задания 6 (число)');
+            arg2 = +prompt('Введите второй аргумент для задания 6 (число)');
+            operation = prompt('Выберите тип операции для задания 6 (+ - * / )');
+        </script> 
+
+    Заданы агрументы 1 = <script>
+        document.write(arg1);
+    </script> и 2 = <script>
+        document.write(arg2);
+    </script> <br>
+
+    <script>
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                default:
+                    return "Во введенных данных кто-то пошло не так =(";
+                case "+":
+                    return sum(arg1,arg2);
+                    break;
+                case "-":
+                    return razn(arg1,arg2);
+                    break;
+                case "*":
+                    return mult(arg1,arg2);
+                    break;
+                case "/":
+                    return div(arg1,arg2);
+                    break;
+
+            }
+        }
+
+        document.write(arg1 + " " + operation + " " + arg2 + " = " + mathOperation(arg1, arg2, operation));
+    </script>
+
+    </p>
+
+    <h3>Задание 7</h3>
+    <p>Сравнить null и 0. Попробуйте объяснить результат. <br>
+
+        <script>
+            console.log(null == 0);
+        </script>
+
+        <pre>console.log(null == 0); // false
+        </pre>
+        тип данных у null - object, сравнение двух значений с разными типами данных будет давать false
+
+    </p>
+
+    <h3>Задание 8</h3>
+
+    <p>Возвести число <input type="number" id="number1"> в степень <input type="number" id="number2">
+
+        <script>
+            function exponent() {
+                var val = document.getElementById("number1").value;
+                var pov = document.getElementById("number2").value;
+                i = 1;
+                endval = val;
+
+                function power(val, pov) {
+                    if (i < pov) {
+                        endval = val * endval;
+                        i++;
+                        console.log('i ' + i); // можно убрать, но пусть висят для отладки
+                        console.log('val ' + endval); // можно убрать, но пусть висят для отладки
+                        console.log('pov ' + pov); // можно убрать, но пусть висят для отладки
+                        power(val, pov);
+                    } else if (i = pov) {
+                        document.getElementById("expresult").innerHTML = endval;
+                        console.log('finalval ' + endval);
+                    }
+                }
+
+                power(val, pov);
+
+
+            }
+        </script>
+
+        <input type="submit" onclick="exponent(); return false;" value="Посчитать">
+        <p id="expresult"></p>
+
+    </p>
+
+    <h3>Вопросы по уроку/домашке</h3>
+    <p>В рамках выполнения этих скриптов при помещении данных/результатов скриптов в html документ медотом document.write()  в консоли браузера постоянно появляется предупреждение "[Violation] Avoid using document.write(). - почему? Какой метод использовать более корректно? Спасибо!"</p>
+
+
+</body>
+
+</html>
