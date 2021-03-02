@@ -56,13 +56,13 @@
 
 
             for (var item of cart) {
-                item.count = +prompt('Сколько килограмов товара ' + item.title + ' вы хоите купить?');
+                item.count = +prompt(item.title + ': колько килограммов вы хотите купить? ');
             }
 
             console.log(cart);
 
             cart.forEach(function (item) {
-                document.write(item.title + ' - ' + item.count + 'кг по цене ' + item.price + 'р.  <br>');
+                document.write(item.title + ': ' + item.count + ' кг по цене ' + item.price + ' ₽ <br>');
             })
 
             var cartSum = 0;
@@ -70,7 +70,7 @@
                 cartSum += item.price * item.count;
             })
 
-            document.write('Стоимость заказа составит ' + cartSum + 'р.')
+            document.write('Стоимость заказа: ' + cartSum + ' ₽')
             console.log(cartSum);
         </script>
     </p>
@@ -100,21 +100,7 @@
 
     </p>
 
-    <h3>Задание 1</h3>
-    <p>
-
-    </p>
-
-    <h3>Задание 1</h3>
-    <p>
-
-    </p>
-
-    <h3>Задание 1</h3>
-    <p>
-
-    </p>
-
+    
 </body>
 
 </html>
