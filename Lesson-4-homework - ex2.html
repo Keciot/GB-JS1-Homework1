@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quest</title>
+    <script src="text.js" ></script>
+    <!--defer - Сначала верстка, потом скрипт
+	скрипты выполняются последовательно
+	-->
+    <script src="gameCodeFixed.js" ></script>
+
+
+</head>
+
+<body>
+    <div>
+        <p>Всего ходов сделано: </p>
+        <script> document.write(answerLog.length);         
+        </script>
+
+        <p>Какой ответ вы хотите посмотреть?</p>
+        <select name="" id="">
+
+        <script>
+            stepi = 1;
+            answerLog.forEach(element => {
+                element = element.split('');
+                document.write('<option>Ход ' + stepi + ': ' + steps[element[0]][element[1]] + '</option>');
+                stepi++
+            });
+        </script></select>
+
+
+    </div>
+</body>
+
+</html>
