@@ -1,4 +1,5 @@
 var figures = [
+    //белые
     wp1 = {
         pic: '&#9817;',
         position: 'A2'
@@ -64,74 +65,70 @@ var figures = [
         pic: '&#9812;',
         position: 'E1'
     },
-    // черные
 
+    // черные
     bp1 = {
         pic: '&#9823;',
-        position: 'A8'
+        position: 'A7'
     },
     bp2 = {
         pic: '&#9823;',
-        position: 'B8'
+        position: 'B7'
     },
     bp3 = {
         pic: '&#9823;',
-        position: 'C8'
+        position: 'C7'
     },
     bp4 = {
         pic: '&#9823;',
-        position: 'D8'
+        position: 'D7'
     },
     bp5 = {
         pic: '&#9823;',
-        position: 'E8'
+        position: 'E7'
     },
     bp6 = {
         pic: '&#9823;',
-        position: 'F8'
+        position: 'F7'
     },
     bp7 = {
         pic: '&#9823;',
-        position: 'G8'
+        position: 'G7'
     },
     bp8 = {
         pic: '&#9823;',
-        position: 'H8'
+        position: 'H7'
     },
     br1 = {
         pic: '&#9820;',
-        position: 'A7'
+        position: 'A8'
     },
     br2 = {
         pic: '&#9820;',
-        position: 'H7'
+        position: 'H8'
     },
     bh1 = {
         pic: '&#9822;',
-        position: 'B7'
+        position: 'B8'
     },
     bh2 = {
         pic: '&#9822;',
-        position: 'G7'
+        position: 'G8'
     },
     bb1 = {
         pic: '&#9821;',
-        position: 'C7'
+        position: 'C8'
     },
     bb2 = {
         pic: '&#9821;',
-        position: 'F7'
+        position: 'F8'
     },
     bq2 = {
         pic: '&#9819;',
-        position: 'D7'
+        position: 'D8'
     },
-
     bk2 = {
         pic: '&#9818;',
-        position: 'E7'
+        position: 'E8'
     }
-
-
-
 ]
