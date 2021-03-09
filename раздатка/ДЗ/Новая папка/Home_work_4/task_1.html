@@ -1,0 +1,26 @@
+<script>
+function NumberObj(hundreds, dozens, units){
+	if (hundreds != 0){
+		this.hundreds = hundreds;
+	}
+	if (dozens != 0){
+		this.dozens = dozens;
+	}
+	this.units = units;
+}
+do {
+var number = prompt("Введите число от 0 до 999");
+} while (number < 0);
+if (number > 999){
+	console.log("Слишком большое число");
+	var NumberObj1 = {};
+}
+else{
+var numberArr = number.split("");
+	while (numberArr.length < 3){
+	numberArr.unshift(0);
+	}
+var NumberObj1 = new NumberObj(numberArr[0], numberArr[1], numberArr[2]);
+}
+console.log(NumberObj1);
+</script>

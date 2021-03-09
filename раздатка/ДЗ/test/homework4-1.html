@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework 4-1</title>
+</head>
+<body> 
+    <h2>Задание 1</h2>
+    <p> Написать функцию, преобразующую число в объект. </p>
+    <script >
+         var x = {
+                hundreds:0,
+                dozens:0,
+                units:0
+            };
+        function numberToObject(number) {
+            if (number>999) {
+                console.log("число превышает 999, возвращаем пустой объект");
+                
+            }
+            else {
+                x.hundreds = parseInt(number/100);//123
+                x.dozens = Math.floor((number%100)/10);//123
+                x.units = number%10;//3
+               
+            }
+            return x;
+        }
+        var a = parseInt(prompt("Ввведите число от 0 до 999"));
+        console.log(numberToObject(a));
+        document.write("Сотни: "+x.hundreds+" десятки:" +x.dozens+" единицы: "+x.units);
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="block">
+        <h1 id="header">Заголовок</h1>
+    </div>
+    
+    <script>
+        var header = document.getElementById("header");
+        header.innerText = "TEST!!!";
+        
+        var block = document.getElementsByTagName("div")[0];
+        for(var i = 0;i<5;i++){
+            //block.innerHTML  +=  "<h3>Новый заголовок №"+(i+1)+"</h3>";
+            block.insertAdjacentHTML("beforeEnd","<h3>Новый заголовок №"+(i+1)+"</h3>");
+        }
+                    
+//        console.log(header.innerText);
+        
+//        header.insertAdjacentHTML("afterEnd","Наш новый элемент!!!");
+        
+//        1) beforeBegin - перед элементом
+//        2) afterBegin - сразу после начала элемента
+//        3) beforeEnd - перед закрывающим тэгом
+//        4) afterEnd - вставить после окончания тэга
+        
+    </script>    
+    
+</body>
+</html>
