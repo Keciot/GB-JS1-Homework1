@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson 3 exercise 1</title>
+</head>
+
+<body>
+    <h3>Задание 1</h3>
+    <p> Попробуем выполнить двумя способами, математическим и гуманитарным =)<br><br>
+        <script>
+            var intake;
+            var result = {
+                hundreds: 0,
+                tens: 0,
+                numbers: 0
+            };
+
+            function getResult() {
+                intake = prompt('Введите число от 0 до 999'); // да здесь строка специально
+                if (intake >= 0 && intake < 1000) {
+                    if (intake.length > 1) {
+                        result.numbers = intake.slice(-1); // единицы это всегда последнее значение строки
+                        for (var i = 2; i <= intake.length;) { // цикл для последовательного нахождения следующих значений, если они есть
+                            var finder = intake.slice(-i, -i + 1); // находим число из последовательности
+                            i == 2 ? result.tens = finder : result.hundreds = finder; // перебираем куда писать значение 
+                            console.log(intake.slice(-1));
+                            i++;
+
+                        }
+                    } else {
+                        result.numbers = intake;
+                    }
+                    console.log('Результат первым способом: ');
+                    console.log(result);
+                    document.write('Вы ввели ' + intake + ' <br> В этом числе содержится:  <br> Сотни: ' + result.hundreds + '<br> Десятки: ' + result.tens + ' <br> Единицы: ' + result.numbers);
+
+                } else {
+                    alert('Ну нет, от 0 до 999, пожалуйста');
+                    console.log('Введено некорректное значение');
+                    console.log(result);
+                    getResult();
+                }
+            }
+
+            getResult();
+        </script>
+
+        <br><br>Можно короче и не городить функцию, она нужна только для того, чтобы вывести в консоль пустой объект, если введено неверное значение и запустить цикл заново.<br><br>
+
+        Попробуем решить то же, но математикой, условия для вывода пустого объекта писать уже не буду, логика та же.
+
+        <br><br>
+
+        <script>
+            var intake2 = +prompt('Введите второе число от 0 до 990 для получения результата другим способом');
+            var result2 = {
+                hundreds: 0,
+                tens: 0,
+                numbers: 0
+            }
+            console.log('Второе исходное: ' + intake2);
+
+            if (intake2 >= 0 && intake2 < 1000) {
+                result2.hundreds = Math.floor(intake2 / 100);
+                result2.tens = Math.floor((intake2 % 100) / 10);
+                result2.numbers = intake2 % 10;
+                console.log('Результат вторым способом: ');
+                console.log(result2);
+                document.write('Вы ввели ' + intake2 + ' <br> В этом числе содержится:  <br> Сотни: ' + result2.hundreds + '<br> Десятки: ' + result2.tens + ' <br> Единицы: ' + result2.numbers);
+            } else {
+                alert('Недопустимое число');
+                document.write('Вы ввели недопустимое число ' + intake2);
+            }
+        </script>
+
+        <h3 style="color: red;">Вопрос, возникший во время решения</h3>
+
+        Я столкнулась с тем, что после 13 значений в поле ввода, какие бы проверки не стояли, они перестают работать и число (текст) мимо проверок пишется в переменную как строка.<br><br> по идее 13 разрядов числа это все еще меньше допустимого безопасного максимума в 2 в 54 степени - меньше на 3 разряда, то есть этим явлением не объясняется. <br><br>С заведомо строковыми значениями - буквами, та же история. Пока букв 12 - проверки работают корректно, выдают алерт о некорректном вводе. Когда символов 13 и больше - не работают вообще, как будто их и нет. <br><br>Нагуглить причину явления и как ограничить такой беспредел - не удалось. Это какие-то специфические ограничения prompt? Если написать через Input, например: <br>
+        &lt input type="number" min="0" max="999" id="given" required / &gt <br>
+        таких проблем нет, потому что невалидное значение просто не передается в переменную...
+
+
+
+    </p>
+
+
+
+</body>
+
+</html>
