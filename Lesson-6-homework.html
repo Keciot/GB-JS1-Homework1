@@ -36,7 +36,8 @@
                     }
 
                 })
-                result = document.createElement('h4');
+                result = document.createElement('h2');
+                result.setAttribute('class', 'cart-result')
                 result.innerText = 'ИТОГО ' + cartSum + '₽';
                 document.getElementById('cartWrap').append(result);
 

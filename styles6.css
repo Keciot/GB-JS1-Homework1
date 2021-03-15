@@ -18,7 +18,12 @@ header {
 .cart {
 
     padding: 0 20px;
-    min-height: 200px;
+    min-height: 100px;
+}
+
+p {
+    font-size: 40px;
+    margin: 0;
 }
 
 .products-wrap {
@@ -38,15 +43,29 @@ header {
     min-width: 300px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 h3 {
     font-weight: 700;
     text-align: center;
 }
+h2 {
+    font-size: 30 px;
+    text-align: right;
+}
+
+
 
 button {
     width: 100px;
     margin: 30px auto;
+}
+
+.cart-result {
+    border: 2px solid red;
+    border-radius: 10px;
+    max-width: 150px;
+    display: block;
+    text-align: center;
 }
