@@ -1,0 +1,52 @@
+body {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Amatic SC', cursive;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+
+header {
+    margin: 30px;
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+}
+
+.cart {
+
+    padding: 0 20px;
+    min-height: 200px;
+}
+
+.products-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+
+}
+
+.product {
+    margin: 15px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    min-height: 100px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h3 {
+    font-weight: 700;
+    text-align: center;
+}
+
+button {
+    width: 100px;
+    margin: 30px auto;
+}

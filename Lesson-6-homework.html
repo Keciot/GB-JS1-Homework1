@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles6.css">
+    <script src="script6.js"></script>
+    <script src="products.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+
+    <title>Урок 6</title>
+</head>
+
+<body>
+    <header>Купи одну настолку, и вторую тоже купи</header>
+    <div class="cart" id="cartWrap">
+
+    </div>
+
+    <script>
+        var cartSum = 0;
+        var empty = '<h2>Вы пока ничего не купили, а жаль.</h2>';
+        var full = '<h2>Ваш заказ</h2>';
+
+        function cartEvent(cartSum) {
+            if (cartSum != 0) {
+                document.getElementById('cartWrap').innerHTML = full;
+                products.forEach(element => {
+                    if (element.quantity > 0) {
+                        list = document.createElement('p');
+                        list.innerText = element.name + ' ' + element.quantity + 'шт. ' + element.price + '₽';
+                        document.getElementById('cartWrap').append(list);
+                    }
+
+                })
+                result = document.createElement('h4');
+                result.innerText = 'ИТОГО ' + cartSum + '₽';
+                document.getElementById('cartWrap').append(result);
+
+            } else {
+                document.getElementById('cartWrap').innerHTML = empty;
+            }
+        }
+
+        cartEvent(cartSum);
+    </script>
+
+
+    <h3>Каталог</h3>
+    <div class="products-wrap" id="product-holder">
+        <!-- Карточки продукта -->
+    </div>
+
+    <script>
+        products.forEach(element => {
+            itemDiv = document.createElement('div');
+            itemDiv.setAttribute('class', 'product');
+            document.getElementById('product-holder').append(itemDiv);
+            h3 = document.createElement('h3');
+            h3.innerText = element.name;
+            itemDiv.append(h3);
+            miniPic = document.createElement('img');
+            miniPic.setAttribute('src', element.smallPic);
+            miniPic.setAttribute('onclick', 'getBigPic()');
+            itemDiv.append(miniPic);
+            button = document.createElement('button');
+            button.innerText = 'Купить';
+            button.setAttribute('onclick', 'addToCart(' + element.name + ')');
+            itemDiv.append(button);
+
+
+        });
+
+        function getBigPic() {
+
+        }
+
+        var cart = [];
+
+        function addToCart(х) {
+            cart.push(х);
+            /*     console.log(cart); */
+            cartSum += cart[cart.length - 1].price;
+            ++cart[cart.length - 1].quantity,
+                console.log(cart);
+            console.log(cartSum);
+            cartEvent(cartSum);
+        }
+    </script>
+
+    <div class="bigPic">
+
+    </div>
+
+</body>
+
+</html>
