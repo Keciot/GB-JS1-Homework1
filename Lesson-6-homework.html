@@ -65,7 +65,7 @@
             itemDiv.append(h3);
             miniPic = document.createElement('img');
             miniPic.setAttribute('src', element.smallPic);
-            miniPic.setAttribute('onclick', 'getBigPic()');
+            miniPic.setAttribute('onclick', 'getBigPic(' + element.name + ')');
             itemDiv.append(miniPic);
             button = document.createElement('button');
             button.innerText = 'Купить';
@@ -75,7 +75,11 @@
 
         });
 
-        function getBigPic() {
+        function getBigPic(y) {
+            var key = products.indexOf(y);
+            console.log(key);
+            document.getElementById('big-pic-id').style.display = "block";
+            document.getElementById('big-pic-id').style.backgroundImage = "url(" + products[key].bigPic[0] + ")";
 
         }
 
@@ -92,7 +96,10 @@
         }
     </script>
 
-    <div class="bigPic">
+    <div class="big-pic" id="big-pic-id">
+        <button id="close">Х</button>
+        <button id="pag-left"> &lt;&mdash; </button>
+        <button id="pag-right"> &mdash;&gt; </button>
 
     </div>
 

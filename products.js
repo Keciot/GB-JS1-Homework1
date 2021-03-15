@@ -12,14 +12,14 @@ var products = [
     Kahoot = {
         name: 'Kahoot',
         price: 1500,
-        bigPic: '../GB-JS1-Homework1/img/big/cahoots_01.jpg',
+        bigPic: ['../GB-JS1-Homework1/img/big/cahoots_01.jpg'],
         smallPic: '../GB-JS1-Homework1/img/small/cahoots_01_small.jpg',
         quantity: 0
     },
     Micromakro = {
         name: 'Micromakro',
         price: 1800,
-        bigPic: '../GB-JS1-Homework1/img/big/micromacro_big.jpg',
+        bigPic: ['../GB-JS1-Homework1/img/big/micromacro_big.jpg'],
         smallPic: '../GB-JS1-Homework1/img/small/micromacro_small.jpg',
         quantity: 0
     },
