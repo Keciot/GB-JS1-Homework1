@@ -91,13 +91,13 @@ img:hover {
 }
 
 .big-pic {
-    width: 900px;
+    width: 700px;
     height: 80vh;
     border: 2px solid gray;
     border-radius: 10px;
     position: absolute;
     left: 50%;
-    margin-left: -450px;
+    margin-left: -350px;
     top: 30px;
     display: none;
     background-image: url(../GB-JS1-Homework1/img/big/not_found.png);
