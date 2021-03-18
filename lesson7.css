@@ -40,7 +40,7 @@ td.game-table-cell {
 }
 
 .bomb-unit {
-    color:red;
+    background-color:red;
 }
 
 .buttons {

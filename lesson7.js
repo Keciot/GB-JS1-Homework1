@@ -102,7 +102,8 @@ function move() {
     // Проверки
     // 1) new_unit не часть змейки
     // 2) Змейка не ушла за границу поля
-    if (!isSnakeUnit(new_unit) && new_unit !== undefined) {
+    // 3) взрыв
+    if (!isSnakeUnit(new_unit) && new_unit !== undefined && !new_unit.classList.contains('bomb-unit')) {
         // Добавление новой части змейки
         new_unit.setAttribute('class', new_unit.getAttribute('class') + ' snake-unit');
         snake.push(new_unit);
@@ -157,12 +158,12 @@ function createFood() {
         }
     }
 }
-
+/* Создание бомб */
 function createBomb() {
-    var isBomb = document.getElementsByClassName('bomb-unit')[0];
+ var isBomb = document.getElementsByClassName('bomb-unit')[0];
     if (isBomb) {
         isBomb.classList.remove('bomb-unit')
-    }
+    } 
     var bomb_x = Math.floor(Math.random() * FIELD_SIZE_X);
     var bomb_y = Math.floor(Math.random() * FIELD_SIZE_Y);
     var bomb_cell = document.getElementsByClassName('cell-' + bomb_x + '-' + bomb_y)[0];
@@ -171,8 +172,6 @@ function createBomb() {
     }
 
 }
-
-
 
 /* Изменение направления движения змейки */ // А.М. Переписано движение по оси игрек так, чтобы знак все же совпадал с направлением движения. В исходном коде почему-то движение по оси игрек было инвертировано.
 function changeDirection(e) {
