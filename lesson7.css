@@ -45,3 +45,9 @@ td.game-table-cell {
     flex-wrap: wrap;
 }
 
+#score-info {
+    display: flex;
+    text-align: center;
+    font-size: 24px;
+}
+
