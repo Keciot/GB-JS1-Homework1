@@ -82,18 +82,34 @@ function move() {
     var coord_y = parseInt(snake_coords[1]);
     var coord_x = parseInt(snake_coords[2]);
     // Определяем новую точку 
-    switch (direction) { // А.М. переписано компактнее
+    switch (direction) { // А.М. переписано компактнее, добавлена телепортация
         case 'x-':
-            --coord_x;
+            if (coord_x == 0) {
+                coord_x = FIELD_SIZE_X - 1;
+            } else {
+                --coord_x;
+            }
             break;
         case 'x+':
-            ++coord_x;
+            if (coord_x == FIELD_SIZE_X - 1) {
+                coord_x = 0
+            } else {
+                ++coord_x;
+            }
             break;
         case 'y-':
-            --coord_y;
+            if (coord_y == 0) {
+                coord_y = FIELD_SIZE_Y - 1;
+            } else {
+                --coord_y;
+            }
             break;
         case 'y+':
-            ++coord_y;
+            if (coord_y == FIELD_SIZE_Y - 1) {
+                coord_y = 0;
+            } else {
+                ++coord_y;
+            }
             break;
     }
     var new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x))[0];
@@ -160,10 +176,10 @@ function createFood() {
 }
 /* Создание бомб */
 function createBomb() {
- var isBomb = document.getElementsByClassName('bomb-unit')[0];
+    var isBomb = document.getElementsByClassName('bomb-unit')[0];
     if (isBomb) {
         isBomb.classList.remove('bomb-unit')
-    } 
+    }
     var bomb_x = Math.floor(Math.random() * FIELD_SIZE_X);
     var bomb_y = Math.floor(Math.random() * FIELD_SIZE_Y);
     var bomb_cell = document.getElementsByClassName('cell-' + bomb_x + '-' + bomb_y)[0];
