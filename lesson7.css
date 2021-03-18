@@ -36,7 +36,11 @@ td.game-table-cell {
 }
 
 .food-unit {
-    background-color: red;
+    background-color: lawngreen;
+}
+
+.bomb-unit {
+    color:red;
 }
 
 .buttons {

@@ -52,17 +52,12 @@ function startGame() {
         respawn(); //создали змейку
         snake_timer = setInterval(move, SNAKE_SPEED); //каждые 200мс запускаем функцию move
         setTimeout(createFood, 5000);
+        setTimeout(createBomb, 10000);
+        setInterval(createBomb, 10000);
     } else {
         alert('Игра уже начата!');
     }
 }
-
-/* Старт после паузы */
-function startGameAfterPause() {
-    gameIsRunning = true;
-    snake_timer = setInterval(move, SNAKE_SPEED); //каждые 200мс запускаем функцию move
-}
-
 
 /* Функция расположения змейки на игровом поле */
 function respawn() {
@@ -163,6 +158,22 @@ function createFood() {
     }
 }
 
+function createBomb() {
+    var isBomb = document.getElementsByClassName('bomb-unit')[0];
+    if (isBomb) {
+        isBomb.classList.remove('bomb-unit')
+    }
+    var bomb_x = Math.floor(Math.random() * FIELD_SIZE_X);
+    var bomb_y = Math.floor(Math.random() * FIELD_SIZE_Y);
+    var bomb_cell = document.getElementsByClassName('cell-' + bomb_x + '-' + bomb_y)[0];
+    if (bomb_cell.getAttribute('class').search('snake-unit') == -1 || bomb_cell.getAttribute('class').search('food-unit' == -1)) {
+        bomb_cell.classList.add('bomb-unit');
+    }
+
+}
+
+
+
 /* Изменение направления движения змейки */ // А.М. Переписано движение по оси игрек так, чтобы знак все же совпадал с направлением движения. В исходном коде почему-то движение по оси игрек было инвертировано.
 function changeDirection(e) {
     console.log(e);
@@ -188,13 +199,7 @@ function changeDirection(e) {
             }
             break;
         case 32: // А.М. Пробел - пауза
-            if (gameIsRunning == true) {
-                clearInterval(snake_timer);
-                gameIsRunning = false;
-            } else {
-                gameIsRunning = true;
-                snake_timer = setInterval(move, SNAKE_SPEED);
-            }
+            alert('Пауза')
             break;
 
     }
